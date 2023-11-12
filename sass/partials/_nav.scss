@@ -1,0 +1,18 @@
+.navbar {
+  padding: 15px;
+  background-color: $background-color;
+}
+
+.navbar-brand {
+  font-family: "Montserrat", sans-serif;
+  font-weight: bold;
+  color: $primary;
+}
+
+.navbar-toggler {
+  border: none;
+}
+
+.nav-link {
+  color: red;
+}

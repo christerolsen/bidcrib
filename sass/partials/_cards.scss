@@ -1,0 +1,9 @@
+.card-link,
+.card-link:visited {
+  color: $accent;
+}
+
+.card-link:hover {
+  color: $secondary;
+  text-decoration: none;
+}

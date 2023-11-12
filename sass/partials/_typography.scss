@@ -2,8 +2,9 @@ body,
 p,
 span,
 a {
-  font-family: ;
-  //Lato
+  font-family: "Lato", sans-serif;
+  font-size: 16px;
+  line-height: 22.4px;
 }
 
 h1,
@@ -11,11 +12,60 @@ h2,
 h3,
 h4,
 h5 {
-  font-family: ;
-  //Playfair Display
+  font-family: "Playfair Display", serif;
 }
 
-button {
-  font-family: ;
-  //Montserrat
+h1 {
+  font-size: 56px;
+  line-height: 61.6px;
+}
+
+h2 {
+  font-size: 48px;
+  line-height: 52.8px;
+}
+
+h3 {
+  font-size: 40px;
+  line-height: 44px;
+}
+
+h4 {
+  font-size: 32px;
+  line-height: 35.2px;
+}
+
+h5 {
+  font-size: 24px;
+  line-height: 26.4px;
+}
+
+h6 {
+  font-size: 20px;
+  line-height: 22px;
+}
+
+a.btn,
+button.btn,
+.btn {
+  font-family: "Montserrat", sans-serif;
+  font-size: 16px;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+  background-color: $secondary;
+  color: $text-color;
+  transition: background-color 0.3s, color 0.3s;
+
+  &:hover {
+    background-color: $accent;
+    color: $background-color;
+  }
+
+  &:active {
+    background-color: $primary;
+    color: $background-color;
+  }
 }
