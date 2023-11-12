@@ -1,0 +1,29 @@
+$primary: #394d54; // Slightly darker blue-gray for a strong brand presence
+$secondary: #6c7d87; // Medium gray for buttons and CTAs, provides balanced contrast
+$accent: #8b9ea7; // Lighter gray-blue for links and secondary CTAs, subtle attention
+$text-color: #333333; // Dark gray text for better contrast on the light background
+$background-color: #f2f2f2; // Light gray background for a clean and professional feel
+
+// scss-docs-start theme-color-variables
+//$primary:       $blue !default;
+//$secondary:     $gray-600 !default;
+//$success:       $green !default;
+//$info:          $cyan !default;
+//$warning:       $yellow !default;
+//$danger:        $red !default;
+//$light:         $gray-100 !default;
+//$dark:          $gray-900 !default;
+// scss-docs-end theme-color-variables
+
+// scss-docs-start theme-colors-map
+//$theme-colors: (
+//  "primary":    $primary,
+//  "secondary":  $secondary,
+//  "success":    $success,
+//  "info":       $info,
+//  "warning":    $warning,
+//  "danger":     $danger,
+//  "light":      $light,
+//  "dark":       $dark
+//) !default;
+// scss-docs-end theme-colors-map
