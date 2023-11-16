@@ -1,3 +1,7 @@
+:root {
+  --nav-height: 62.4px; // Sets the variable to the wanted height of navbar, so that it can be re-used.
+}
+
 html,
 body {
   height: 100%;
@@ -9,12 +13,11 @@ body {
 }
 
 main {
-  margin-top: 65px;
-}
+  margin-top: var(--nav-height);
 
-main section#listings-section,
-main section#search-section {
-  margin: 5%;
+  section {
+    margin: calc(var(--nav-height) + 5%) 5% 5% 5%;
+  }
 }
 
 footer {

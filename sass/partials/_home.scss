@@ -1,0 +1,28 @@
+section#hero-section {
+  margin: var(--nav-height) 0 0 0;
+}
+
+.carousel-inner {
+  max-height: 500px;
+}
+
+.carousel-caption {
+  text-align: left;
+  background-color: #000000b0;
+  padding: 2%;
+  border-radius: 8px;
+  max-width: 25%;
+}
+
+.carousel-item img {
+  max-height: 500px;
+  object-fit: cover;
+}
+
+section#search-section {
+}
+
+section#search-section,
+section#listings-section {
+  margin-top: 5%;
+}

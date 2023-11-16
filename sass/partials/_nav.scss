@@ -4,8 +4,12 @@
 }
 
 .navbar-brand {
-  font-family: "Montserrat", sans-serif;
+  font-family: "Viga", sans-serif;
   font-weight: bold;
+  color: $primary;
+}
+
+.navbar-brand:hover {
   color: $primary;
 }
 
@@ -14,5 +18,9 @@
 }
 
 .nav-link {
-  color: red;
+  color: $text-color;
+}
+
+.nav-link:hover {
+  color: $secondary;
 }

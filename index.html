@@ -8,17 +8,17 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Oxygen:wght@300;400;700&family=Viga&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="/css/style.css" />
   </head>
 
   <body>
     <header>
       <nav class="navbar fixed-top navbar-expand-lg bg-body-tertiary">
         <div class="container-fluid">
-          <a class="navbar-brand" href="./index.html">BidCrib</a>
+          <a class="navbar-brand" href="/index.html">BidCrib</a>
           <button
             class="navbar-toggler"
             type="button"
@@ -33,23 +33,25 @@
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
               <li class="nav-item">
-                <a
-                  class="nav-link active"
-                  aria-current="page"
-                  href="./index.html"
+                <a class="nav-link" aria-current="page" href="/index.html"
                   >Home</a
                 >
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">About</a>
+                <a class="nav-link" href="/pages/about.html">About</a>
               </li>
             </ul>
             <ul class="navbar-nav me-right mb-2 mb-lg-0">
               <li class="nav-item">
-                <a class="nav-link" aria-current="page" href="#">Sign in</a>
+                <a
+                  class="nav-link"
+                  aria-current="page"
+                  href="/pages/signin.html"
+                  >Sign in</a
+                >
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">Register</a>
+                <a class="nav-link" href="/pages/register.html">Register</a>
               </li>
             </ul>
           </div>
@@ -66,40 +68,49 @@
           <div class="carousel-inner">
             <div class="carousel-item active">
               <img
-                src="./img/mountain2.jpg"
-                class="d-block w-100"
-                alt="test-img"
+                src="/img/hero-images/audience_inside_an_action_house.jpg"
+                class="d-block w-100 image-fluid"
+                alt="Image of the audience inside an auction house"
               />
               <div class="carousel-caption d-none d-md-block">
-                <h5>First slide label</h5>
+                <h5>Empowering and Rewarding</h5>
                 <p>
-                  Some representative placeholder content for the first slide.
+                  BidCrib empowers users with a unique credit system, offering
+                  an initial 1000 credits. This encourages active participation
+                  in buying and selling, rewarding users for their contributions
+                  and fostering a sense of ownership and empowerment.
                 </p>
               </div>
             </div>
             <div class="carousel-item">
               <img
-                src="./img/mountain2.jpg"
-                class="d-block w-100"
-                alt="test-img"
+                src="/img/hero-images/auction_hammer.jpg"
+                class="d-block w-100 image-fluid"
+                alt="Image of an auction hammer"
               />
               <div class="carousel-caption d-none d-md-block">
-                <h5>Second slide label</h5>
+                <h5>Trustworthy and Reliable</h5>
                 <p>
-                  Some representative placeholder content for the second slide.
+                  BidCrib embodies trustworthiness and reliability, ensuring a
+                  secure and transparent auction platform. The brand is
+                  committed to fair and honest transactions, offering users a
+                  dependable space for online buying and selling.
                 </p>
               </div>
             </div>
             <div class="carousel-item">
               <img
-                src="./img/mountain2.jpg"
-                class="d-block w-100"
-                alt="test-img"
+                src="/img/hero-images/items_displayed_in_an_action_house.jpg"
+                class="d-block w-100 image-fluid"
+                alt="Image of items displayed in an auction gallery"
               />
               <div class="carousel-caption d-none d-md-block">
-                <h5>Third slide label</h5>
+                <h5>Dynamice and Interactive</h5>
                 <p>
-                  Some representative placeholder content for the third slide.
+                  BidCrib embodies trustworthiness and reliability, ensuring a
+                  secure and transparent auction platform. The brand is
+                  committed to fair and honest transactions, offering users a
+                  dependable space for online buying and selling.
                 </p>
               </div>
             </div>
@@ -125,9 +136,9 @@
         </div>
       </section>
       <section id="search-section">
-        <div class="container">
-          <div class="row gap-10 justify-content-md-between">
-            <div class="col">
+        <div class="container col-lg p-0">
+          <div class="row row-cols-2">
+            <div class="col-5">
               <form class="d-flex" role="search">
                 <input
                   class="form-control me-2"
@@ -160,7 +171,7 @@
       </section>
       <section id="listings-section">
         <div class="container">
-          <div class="row gap-5 m-0 justify-content-md-between">
+          <div class="row gap-3 m-0 justify-content-md-around">
             <div class="card" style="width: 18rem">
               <img src="..." class="card-img-top" alt="..." />
               <div class="card-body">
@@ -282,7 +293,9 @@
     <footer>
       <div class="container text-center">
         <div class="row row-cols-1">
-          <div class="col p-3">LOGO</div>
+          <div class="col p-3">
+            <a class="navbar-brand" href="./index.html">BidCrib</a>
+          </div>
           <div class="col p-3">
             <button type="button" class="btn">f</button>
             <button type="button" class="btn">x</button>
