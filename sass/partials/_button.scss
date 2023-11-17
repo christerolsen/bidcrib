@@ -1,0 +1,29 @@
+a.btn,
+button.btn,
+.btn {
+  font-family: "Montserrat", sans-serif;
+  font-size: $body-font-size;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  border-radius: 5px;
+  background-color: $primary;
+  color: $background-color;
+  transition: background-color 0.3s, color 0.3s;
+  padding: 1em;
+  width: fit-content;
+
+  &:hover {
+    background-color: $background-color;
+    color: $text-color;
+  }
+
+  &:active {
+    background-color: $primary;
+    color: $background-color;
+  }
+}
+
+#loadMoreButton {
+  display: none;
+}

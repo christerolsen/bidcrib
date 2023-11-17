@@ -1,0 +1,26 @@
+.message-container {
+  display: none;
+  text-align: center;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+}
+
+.message {
+  padding: 15px;
+  border-radius: 5px;
+  margin-bottom: 15px;
+  display: flex;
+  line-height: 16px;
+  font-weight: bold;
+
+  &.success {
+    border: 3px solid $success;
+    color: $success;
+  }
+
+  &.error {
+    border: 3px solid $danger;
+    color: $danger;
+  }
+}

@@ -1,0 +1,33 @@
+form#signinForm,
+form#registerForm {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-width: 50%;
+
+  @media (max-width: 1080px) {
+    max-width: 100%;
+  }
+
+  input.form-control {
+    font-family: "Montserrat", sans-serif;
+    font-size: $body-font-size;
+    line-height: $body-line-height;
+    height: 55px;
+  }
+
+  button#signinButton,
+  button#registerButton {
+    align-self: flex-end;
+
+    @media (max-width: 1080px) {
+      width: 100%;
+    }
+  }
+
+  #formLink {
+    margin-top: 1em;
+    width: 100%;
+    text-align: center;
+  }
+}

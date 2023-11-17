@@ -1,26 +1,30 @@
 .navbar {
   padding: 15px;
   background-color: $background-color;
-}
 
-.navbar-brand {
-  font-family: "Viga", sans-serif;
-  font-weight: bold;
-  color: $primary;
-}
+  .navbar-brand {
+    font-family: "Viga", sans-serif;
+    font-weight: bold;
+    color: $primary;
 
-.navbar-brand:hover {
-  color: $primary;
-}
+    &:hover {
+      color: $primary;
+    }
+  }
 
-.navbar-toggler {
-  border: none;
-}
+  .navbar-toggler {
+    border: none;
+  }
 
-.nav-link {
-  color: $text-color;
-}
+  .nav-link {
+    color: $text-color;
+  }
 
-.nav-link:hover {
-  color: $secondary;
+  .nav-link:hover {
+    color: $secondary;
+  }
+
+  a.nav-link.active {
+    color: $secondary;
+  }
 }

@@ -44,7 +44,7 @@
             <ul class="navbar-nav me-right mb-2 mb-lg-0">
               <li class="nav-item">
                 <a
-                  class="nav-link"
+                  class="nav-link active"
                   aria-current="page"
                   href="/pages/signin.html"
                   >Sign in</a
@@ -59,9 +59,34 @@
       </nav>
     </header>
     <main>
-      <section>
-        <h1>Template</h1>
-        <p>Main content goes here</p>
+      <section id="signin-section">
+        <h1>Sign in</h1>
+        <form id="signinForm">
+          <input
+            id="signinEmail"
+            type="text"
+            name="email"
+            class="form-control"
+            placeholder="Email"
+            aria-label="Email"
+          />
+          <input
+            id="signinPassword"
+            type="password"
+            name="password"
+            class="form-control"
+            placeholder="Password"
+            aria-label="Password"
+          />
+          <button id="signinButton" class="btn" type="submit">Sign in</button>
+          <div class="message-container"></div>
+          <p id="formLink">
+            Do you need an account?
+            <a href="/pages/register.html" class="card-link"
+              >Register one here.</a
+            >
+          </p>
+        </form>
       </section>
     </main>
     <footer>
@@ -84,5 +109,6 @@
       </div>
     </footer>
     <script src="/js/bootstrap-js/bootstrap.bundle.min.js"></script>
+    <script defer type="module" src="/js/script.mjs"></script>
   </body>
 </html>
