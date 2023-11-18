@@ -8,6 +8,7 @@ import {
   profileContent,
   getUserProfile,
   getUserListings,
+  updateAvatar,
 } from "./auth/profile.mjs";
 import { getListingDetails } from "./components/listingDetails.mjs";
 import { addSignOutClickListener } from "./auth/signout.mjs";

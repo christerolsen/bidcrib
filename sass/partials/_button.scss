@@ -2,7 +2,7 @@ a.btn,
 button.btn,
 .btn,
 .btn-small {
-  font-family: "Montserrat", sans-serif;
+  font-family: "Viga", sans-serif;
   font-size: $body-font-size;
   text-align: center;
   text-decoration: none;
@@ -11,7 +11,7 @@ button.btn,
   background-color: $primary;
   color: $background-color;
   transition: background-color 0.3s, color 0.3s;
-  padding: 1em;
+  padding: 0.5em;
   width: fit-content;
 
   &:hover {

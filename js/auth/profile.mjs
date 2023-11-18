@@ -150,6 +150,21 @@ if (profileContent) {
                               </div
                           </div>
                       </div>
+                      <div class="card-footer text-body-secondary row align-items-center">
+                        <div class="col">
+                      <input
+                      id="updateAvatar"
+                      type="url"
+                      name="avatar"
+                      class="form-control"
+                      placeholder="Paste URL for new Avatar"
+                      aria-label="Avatar"
+                      />
+                        </div>
+                        <div class="col">
+                        <button id="updateButton" class="btn" onclick="updateAvatar()">Update</button>
+                        </div>
+                      </div>
                   </div>
                 </div>
                 <div class="row">
@@ -164,4 +179,56 @@ if (profileContent) {
                 </div>
               </div>
           `;
+}
+
+export async function updateAvatar() {
+  const avatarInput = document.querySelector("#updateAvatar");
+  const avatarValue = avatarInput.value.trim();
+
+  let validationErrors = [];
+  // Check for valid avatar URL format
+  if (!/\.(jpg|jpeg|png|gif|svg)$/i.test(avatarValue)) {
+    validationErrors.push(
+      "Avatar must be a valid URL ending with .jpg, .jpeg, .png, .gif, or .svg."
+    );
+  }
+
+  if (validationErrors.length > 0) {
+    // Handle validation errors, e.g., display error messages to the user
+    const errorMessage = "Validation errors:\n" + validationErrors.join("\n");
+    alert(errorMessage);
+    return;
+  }
+
+  const options = {
+    method: "PUT",
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: `Bearer ${token}`,
+    },
+    body: JSON.stringify({ avatar: avatarValue }),
+  };
+
+  const apiUrl = `${apiProfiles}/${name}/media`;
+
+  try {
+    const response = await fetch(apiUrl, options);
+
+    if (!response.ok) {
+      // If the response status is not ok (e.g., 404 Not Found), throw an error
+      throw new Error(`HTTP error! Status: ${response.status}`);
+    }
+
+    window.location.href = "/pages/profile.html";
+
+    // Handle profileData as needed
+  } catch (error) {
+    handleFetchError(error);
+  }
+}
+
+// Set the event listener outside the updateAvatar function
+const updateButton = document.querySelector("#updateButton");
+if (updateButton) {
+  updateButton.addEventListener("click", updateAvatar);
 }
