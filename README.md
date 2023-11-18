@@ -20,6 +20,10 @@ A blog with a modern and simple design. Front-end is built with HTML, CSS and Ja
 - About - simple about-page.
 - Contact - socials and form.
 
+## UI Style Guide
+- [See the guide here](https://github.com/christerolsen/bidcrib/blob/main/various-attachements/bidcrib-ui_style_guide.pdf)
+- Remember to click "More Pages" to see all pages.
+
 ## Built With
 
 - HTML
