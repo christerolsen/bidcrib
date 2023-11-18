@@ -1,18 +1,15 @@
 # BidCrib - Semester Project 2
 
-![image](/img/odd-tops_homepage.jpg)
+![image](/img/various/homepage-screenshot.png)
 
 A blog based on mountain hikes carried out by a friend.
 
-- [Live demo on Netlify](https://odd-tops.christerolsen.com)
+- [Live demo on Netlify](https://silly-meringue-575725.netlify.app)
 
 ## Description
 
 ### ! - Under development - !
 
-```bash
-The content from the API has been moved, but the code has not yet been updated..
-```
 
 A blog with a modern and simple design. Front-end is built with HTML, CSS and Javascript, where the content is fetched used a headless WordPress installation.
 
@@ -22,6 +19,10 @@ A blog with a modern and simple design. Front-end is built with HTML, CSS and Ja
   You can also filter the posts based on the difficulty level that the blogger has set for the hike.
 - About - simple about-page.
 - Contact - socials and form.
+
+## UI Style Guide
+- [See the guide here](https://github.com/christerolsen/bidcrib/blob/main/various-attachements/bidcrib-ui_style_guide.pdf)
+- Remember to click "More Pages" to see all pages.
 
 ## Built With
 
