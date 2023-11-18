@@ -10,6 +10,7 @@ import {
   getUserListings,
 } from "./auth/profile.mjs";
 import { getListingDetails } from "./components/listingDetails.mjs";
+import { addSignOutClickListener } from "./auth/signout.mjs";
 
 const currentPage = getCurrentPage();
 
@@ -56,3 +57,4 @@ switch (currentPage) {
 }
 
 checkIfUserSignedIn();
+addSignOutClickListener();
