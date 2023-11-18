@@ -11979,6 +11979,7 @@ textarea.form-control-lg {
   font-family: "Viga", sans-serif;
   font-weight: bold;
   color: #01385f;
+  font-size: 2em;
 }
 .navbar .navbar-brand:hover {
   color: #01385f;
@@ -12005,7 +12006,7 @@ textarea.form-control-lg {
 }
 
 :root {
-  --nav-height: 62.4px;
+  --nav-height: 90px;
 }
 
 html,
