@@ -7,7 +7,7 @@
 
 ### ! - Under development - !
 
-A auction website where registered users can list items and bid on them
+A auction website where registered users can list items and bid on them.
 Upon registration the user gets 1000 credits to use for bidding. The only way they can get more credits is to sell items themselves.
 
 #### Guest users (users that are not signed in) can only se the listings.
@@ -20,7 +20,7 @@ Upon registration the user gets 1000 credits to use for bidding. The only way th
 - view their profile page
 - update their avatar, using URL ending with .jpg, .jpeg, png, .gif or .svg
 - view their total credits
-- create a listing, adding title, description, deadline date, media
+- create a listing adding title, description, deadline date, media
 - bid on listings, if they have enough credits
 - view how many bids a listing have gotten
 
@@ -51,7 +51,7 @@ Hero images, "no-image" image and profilepictures are generated using [Adobe Fir
 Clone the repo:
 
 ```bash
-git@github.com:Noroff-FEU-Assignments/project-exam-1-chrirstud.git
+https://github.com/christerolsen/bidcrib.git
 ```
 
 ### Running
