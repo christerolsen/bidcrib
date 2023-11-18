@@ -24,6 +24,9 @@ A blog with a modern and simple design. Front-end is built with HTML, CSS and Ja
 - [See the guide here](https://github.com/christerolsen/bidcrib/blob/main/various-attachements/bidcrib-ui_style_guide.pdf)
 - Remember to click "More Pages" to see all pages.
 
+## Prototype
+- [See the prototype here](https://xd.adobe.com/view/0b67b86d-b2fc-4e2b-a029-c7b5cfb73eb3-5e34/?fullscreen)
+
 ## Built With
 
 - HTML
