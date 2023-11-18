@@ -1,6 +1,7 @@
 a.btn,
 button.btn,
-.btn {
+.btn,
+.btn-small {
   font-family: "Montserrat", sans-serif;
   font-size: $body-font-size;
   text-align: center;
@@ -26,4 +27,10 @@ button.btn,
 
 #loadMoreButton {
   display: none;
+}
+
+.btn-small {
+  padding: 0;
+  background-color: white;
+  color: $primary;
 }

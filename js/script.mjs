@@ -2,9 +2,14 @@ import getCurrentPage from "./handlers/pageDetector.mjs";
 import { getListings } from "./components/listings.mjs";
 import { submitRegisterForm } from "./auth/register.mjs";
 import { submitSigninForm } from "./auth/signin.mjs";
-import { token, user, credit, avatar } from "./auth/profile.mjs";
 import { getFromLocalStorage } from "./utils/storage.mjs";
-import { headers } from "./auth/authorization.mjs";
+import { checkIfUserSignedIn } from "./auth/authorization.mjs";
+import {
+  profileContent,
+  getUserProfile,
+  getUserListings,
+} from "./auth/profile.mjs";
+import { getListingDetails } from "./components/listingDetails.mjs";
 
 const currentPage = getCurrentPage();
 
@@ -31,14 +36,18 @@ switch (currentPage) {
     break;
 
   case "profile":
-    break;
-
-  case "listing":
-    // Code for the listing page
+    if (profileContent) {
+      getUserProfile();
+      getUserListings();
+    }
     break;
 
   case "about":
     // Code for the about page
+    break;
+
+  case "listingDetails":
+    getListingDetails();
     break;
 
   default:
@@ -46,4 +55,4 @@ switch (currentPage) {
     break;
 }
 
-console.log(headers());
+checkIfUserSignedIn();

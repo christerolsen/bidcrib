@@ -16,6 +16,10 @@
     border: none;
   }
 
+  .nav-item {
+    padding: 0 20px;
+  }
+
   .nav-link {
     color: $text-color;
   }
@@ -26,5 +30,11 @@
 
   a.nav-link.active {
     color: $secondary;
+  }
+
+  span#userCredits {
+    font-weight: bold;
+    padding-right: 40px;
+    color: $success;
   }
 }

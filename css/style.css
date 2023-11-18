@@ -11986,6 +11986,9 @@ textarea.form-control-lg {
 .navbar .navbar-toggler {
   border: none;
 }
+.navbar .nav-item {
+  padding: 0 20px;
+}
 .navbar .nav-link {
   color: #1a1a1a;
 }
@@ -11994,6 +11997,11 @@ textarea.form-control-lg {
 }
 .navbar a.nav-link.active {
   color: #cb6d10;
+}
+.navbar span#userCredits {
+  font-weight: bold;
+  padding-right: 40px;
+  color: #198754;
 }
 
 :root {
@@ -12079,6 +12087,10 @@ h5,
   font-family: "Viga", sans-serif;
 }
 
+.material-symbols-outlined {
+  font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
+}
+
 .card-link,
 .card-link:visited {
   color: #cb6d10;
@@ -12118,7 +12130,8 @@ section#listings-section {
 
 a.btn,
 button.btn,
-.btn {
+.btn,
+.btn-small {
   font-family: "Montserrat", sans-serif;
   font-size: 1em;
   text-align: center;
@@ -12134,19 +12147,27 @@ button.btn,
 }
 a.btn:hover,
 button.btn:hover,
-.btn:hover {
+.btn:hover,
+.btn-small:hover {
   background-color: #ece5d2;
   color: #1a1a1a;
 }
 a.btn:active,
 button.btn:active,
-.btn:active {
+.btn:active,
+.btn-small:active {
   background-color: #01385f;
   color: #ece5d2;
 }
 
 #loadMoreButton {
   display: none;
+}
+
+.btn-small {
+  padding: 0;
+  background-color: white;
+  color: #01385f;
 }
 
 form#signinForm,

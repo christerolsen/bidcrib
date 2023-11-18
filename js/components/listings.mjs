@@ -2,6 +2,7 @@ import getCurrentPage from "../handlers/pageDetector.mjs";
 import { apiListings, baseURL } from "./settings.mjs";
 import displayMessage from "./displayMessage.mjs";
 import { formatDateTime } from "../utils/formatDateTime.mjs";
+import { checkIfUserSignedIn } from "../auth/authorization.mjs";
 
 const loadMoreButton = document.querySelector("#loadMoreButton");
 const messageContainer = document.querySelector(".message-container");
@@ -25,13 +26,15 @@ export async function getListings() {
       const imageUrl =
         listing.media.length > 0
           ? listing.media[0]
-          : "../img/various/mountain2.jpg";
+          : "../img/various/no_image_uploaded.jpg";
       const formattedDeadline = formatDateTime(listing.endsAt);
       const formattedUpdateDate = formatDateTime(listing.updated);
 
+      checkIfUserSignedIn();
+
       listingsContainer.innerHTML += `
         <div class="col">
-            <div class="card h-100" style="width: 19rem;">
+            <div class="card " style="width: 19rem;">
                 <img src="${imageUrl}" class="card-img-top" alt="Image of listing" />
                 <div class="card-body">
                     <h2 class="card-title">${listing.title}</h2>
@@ -48,17 +51,20 @@ export async function getListings() {
                             <p>${formattedUpdateDate}</p>
                         </li>
                         
-                        <li class="list-group-item">
-                            <a href="#" class="card-link">View more</a>
+                        <li class="list-group-item signedIn" >
+                            <a href="/pages/listingDetails.html?id=${listing.id}" class="card-link">View more</a>
+                        </li>
+                        
+                        <li class="list-group-item notSignedIn" >
+                            <p>Please sign in to view details</p>
                         </li>
                     </ul>
                 </div>
             </div>
         </div>`;
-      //husk å endre <ul>-ene i forhold til om man er innlogget eller utlogget. Det som vises nå er for innlogget.
     });
 
-    console.log(results);
+    //console.log(results);
   } catch (error) {
     console.error("Error fetching listings:", error);
     messageContainer.style.display = "flex";

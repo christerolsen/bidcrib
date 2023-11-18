@@ -11,6 +11,10 @@
       href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Oxygen:wght@300;400;700&family=Viga&display=swap"
       rel="stylesheet"
     />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    />
     <link rel="stylesheet" href="/css/style.css" />
   </head>
 
@@ -33,27 +37,28 @@
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
               <li class="nav-item">
-                <a class="nav-link" aria-current="page" href="/index.html"
-                  >Home</a
-                >
+                <a class="nav-link" href="/index.html">Home</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="/pages/about.html">About</a>
               </li>
             </ul>
-            <ul class="navbar-nav me-right mb-2 mb-lg-0">
+            <ul class="navbar-nav me-right mb-2 mb-lg-0 notSignedIn">
               <li class="nav-item">
-                <a
-                  class="nav-link"
-                  aria-current="page"
-                  href="/pages/signin.html"
-                  >Sign in</a
-                >
+                <a class="nav-link" href="/pages/signin.html">Sign in</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link active" href="/pages/register.html"
                   >Register</a
                 >
+              </li>
+            </ul>
+            <ul class="navbar-nav me-right mb-2 mb-lg-0 signedIn">
+              <li class="nav-item">
+                <a class="nav-link" href="/pages/profile.html">My BidCrib</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/pages/logout.html">Log out</a>
               </li>
             </ul>
           </div>
@@ -120,15 +125,6 @@
     <footer>
       <div class="container text-center">
         <div class="row row-cols-1">
-          <div class="col p-3">
-            <a class="navbar-brand" href="./index.html">BidCrib</a>
-          </div>
-          <div class="col p-3">
-            <button type="button" class="btn">f</button>
-            <button type="button" class="btn">x</button>
-            <button type="button" class="btn">in</button>
-            <button type="button" class="btn">o</button>
-          </div>
           <div class="col p-3">
             BidCrib &copy; 2023
             <span><a href="https://christerolsen.com">Christer Olsen</a></span>

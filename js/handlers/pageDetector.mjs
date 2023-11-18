@@ -9,10 +9,10 @@ export default function getCurrentPage() {
     return "signin";
   } else if (currentPage.includes("profile")) {
     return "profile";
-  } else if (currentPage.includes("listing")) {
-    return "listing";
   } else if (currentPage.includes("about")) {
     return "about";
+  } else if (currentPage.includes("listingDetails")) {
+    return "listingDetails";
   } else {
     return "unknown"; // default or handle additional cases as needed
   }
