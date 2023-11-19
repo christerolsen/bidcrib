@@ -5,8 +5,6 @@
 
 ## Description
 
-### ! - Under development - !
-
 A auction website where registered users can list items and bid on them.
 Upon registration the user gets 1000 credits to use for bidding. The only way they can get more credits is to sell items themselves.
 
