@@ -1,5 +1,6 @@
 form#signinForm,
-form#registerForm {
+form#registerForm,
+form#newListingForm {
   display: flex;
   flex-direction: column;
   gap: 10px;

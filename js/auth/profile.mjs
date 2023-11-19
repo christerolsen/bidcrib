@@ -54,30 +54,7 @@ export async function getUserProfile() {
   }
 }
 
-// Delete a user listing:
-export async function deleteUserListing(listingId) {
-  try {
-    const response = await fetch(
-      `${apiProfiles}/${name}/listings/${listingId}`,
-      {
-        method: "DELETE",
-        options,
-        // You can include headers or other options as needed
-      }
-    );
-
-    if (!response.ok) {
-      // If the response status is not ok (e.g., 404 Not Found), throw an error
-      throw new Error(`HTTP error! Status: ${response.status}`);
-    }
-
-    console.log(`Listing with ID ${listingId} deleted successfully`);
-  } catch (error) {
-    handleFetchError(error);
-  }
-}
-
-// Get the user listings
+// the user listings
 export async function getUserListings() {
   try {
     const response = await fetch(`${apiProfiles}/${name}/listings`, options);
@@ -97,10 +74,6 @@ export async function getUserListings() {
       listingsArray.forEach((listing) => {
         userListings.innerHTML += `<li class="list-group-item">
           <a href="/pages/listingDetails.html?id=${listing.id}" class="card-link">${listing.title}</a>
-          <button style="all: unset; cursor: pointer;" onclick="deleteListing(${listing.id})"><span class="material-symbols-outlined">
-          delete
-          </span>
-          </button>
         </li>`;
       });
     }
@@ -170,9 +143,12 @@ if (profileContent) {
                       </div>
                   </div>
                 </div>
-                <div class="row">
+
+                <div class="row" style="margin-top:50px;">
                     <h2>Your listings</h2>
                     <h5>Number of listings: <span id="userListingsCount"></span></h5>
+                    <a href="/pages/newListing.html" class="btn" style="margin:5px;">Create a new lising</a>
+                  
                 </div>
                 <div class="row">
                     <div class="card" style="width: 18rem;">
@@ -184,12 +160,12 @@ if (profileContent) {
           `;
 }
 
+// update user avatar
 export async function updateAvatar() {
   const avatarInput = document.querySelector("#updateAvatar");
   const avatarValue = avatarInput.value.trim();
 
   let validationErrors = [];
-  // Check for valid avatar URL format
   if (!/\.(jpg|jpeg|png|gif|svg)$/i.test(avatarValue)) {
     validationErrors.push(
       "Avatar must be a valid URL ending with .jpg, .jpeg, .png, .gif, or .svg."
@@ -197,7 +173,6 @@ export async function updateAvatar() {
   }
 
   if (validationErrors.length > 0) {
-    // Handle validation errors, e.g., display error messages to the user
     const errorMessage = "Validation errors:\n" + validationErrors.join("\n");
     alert(errorMessage);
     return;
@@ -218,19 +193,15 @@ export async function updateAvatar() {
     const response = await fetch(apiUrl, options);
 
     if (!response.ok) {
-      // If the response status is not ok (e.g., 404 Not Found), throw an error
       throw new Error(`HTTP error! Status: ${response.status}`);
     }
 
     window.location.href = "/pages/profile.html";
-
-    // Handle profileData as needed
   } catch (error) {
     handleFetchError(error);
   }
 }
 
-// Set the event listener outside the updateAvatar function
 const updateButton = document.querySelector("#updateButton");
 if (updateButton) {
   updateButton.addEventListener("click", updateAvatar);

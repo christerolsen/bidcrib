@@ -6,9 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="Register page for BidCrib auction site."
+      content="Create new listing at BidCrib auction site."
     />
-    <title>BidCrib | Register</title>
+    <title>BidCrib | New Listing</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -52,14 +52,14 @@
                 <a class="nav-link" href="/pages/signin.html">Sign in</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link active" href="/pages/register.html"
-                  >Register</a
-                >
+                <a class="nav-link" href="/pages/register.html">Register</a>
               </li>
             </ul>
             <ul class="navbar-nav me-right mb-2 mb-lg-0 signedIn">
               <li class="nav-item">
-                <a class="nav-link" href="/pages/profile.html">My BidCrib</a>
+                <a class="nav-link active" href="/pages/profile.html"
+                  >My BidCrib</a
+                >
               </li>
               <li class="nav-item">
                 <a id="signOutLink" class="nav-link" href="#">Sign out</a>
@@ -71,58 +71,44 @@
     </header>
     <main>
       <section id="signin-section">
-        <h1>Register</h1>
-        <form id="registerForm">
+        <h1>New Listing</h1>
+        <form id="newListingForm">
           <input
-            id="registerName"
+            class="form-control"
             type="text"
-            name="name"
-            class="form-control"
-            placeholder="Name"
-            aria-label="Name"
+            name="title"
+            id="listingTitle"
+            placeholder="Title"
           />
           <input
-            id="registerEmail"
-            type="text"
-            name="email"
             class="form-control"
-            placeholder="Email"
-            aria-label="Email"
+            type="datetime-local"
+            name="deadline"
+            id="listingDeadline"
+            placeholder="Deadline"
           />
           <input
-            id="registerPassword"
-            type="password"
-            name="password"
             class="form-control"
-            placeholder="Password"
-            aria-label="Password"
-          />
-          <input
-            id="confirmPassword"
-            type="password"
-            name="password"
-            class="form-control"
-            placeholder="Confirm password"
-            aria-label="Confirm password"
-          />
-          <input
-            id="registerAvatar"
             type="url"
-            name="avatar"
-            class="form-control"
-            placeholder="Avatar"
-            aria-label="Avatar"
+            name="media"
+            id="listingMedia"
+            placeholder="Media"
           />
-          <button id="registerButton" class="btn" type="submit">
-            Register
+          <textarea
+            class="form-control"
+            name="description"
+            id="listingDescription"
+            placeholder="Description"
+          ></textarea>
+          <button
+            type="button"
+            class="btn btn-primary"
+            id="createListingButton"
+            onclick="createListing()"
+          >
+            Create Listing
           </button>
           <div class="message-container"></div>
-          <div id="formLink">
-            <p>
-              Allready registered?
-              <a href="/pages/signin.html" class="card-link">Sign in here.</a>
-            </p>
-          </div>
         </form>
       </section>
     </main>
@@ -137,6 +123,7 @@
       </div>
     </footer>
     <script src="/js/bootstrap-js/bootstrap.bundle.min.js"></script>
+    <script defer type="module" src="/js/components/newListing.mjs"></script>
     <script defer type="module" src="/js/script.mjs"></script>
   </body>
 </html>

@@ -12185,7 +12185,8 @@ button.btn:active,
 }
 
 form#signinForm,
-form#registerForm {
+form#registerForm,
+form#newListingForm {
   display: flex;
   flex-direction: column;
   gap: 10px;
@@ -12193,12 +12194,14 @@ form#registerForm {
 }
 @media (max-width: 1080px) {
   form#signinForm,
-  form#registerForm {
+  form#registerForm,
+  form#newListingForm {
     max-width: 100%;
   }
 }
 form#signinForm input.form-control,
-form#registerForm input.form-control {
+form#registerForm input.form-control,
+form#newListingForm input.form-control {
   font-family: "Montserrat", sans-serif;
   font-size: 1em;
   line-height: 1.6em;
@@ -12207,19 +12210,24 @@ form#registerForm input.form-control {
 form#signinForm button#signinButton,
 form#signinForm button#registerButton,
 form#registerForm button#signinButton,
-form#registerForm button#registerButton {
+form#registerForm button#registerButton,
+form#newListingForm button#signinButton,
+form#newListingForm button#registerButton {
   align-self: flex-end;
 }
 @media (max-width: 1080px) {
   form#signinForm button#signinButton,
   form#signinForm button#registerButton,
   form#registerForm button#signinButton,
-  form#registerForm button#registerButton {
+  form#registerForm button#registerButton,
+  form#newListingForm button#signinButton,
+  form#newListingForm button#registerButton {
     width: 100%;
   }
 }
 form#signinForm #formLink,
-form#registerForm #formLink {
+form#registerForm #formLink,
+form#newListingForm #formLink {
   margin-top: 1em;
   width: 100%;
   text-align: center;

@@ -3,10 +3,16 @@ import { formatDateTime } from "../utils/formatDateTime.mjs";
 import { getFromLocalStorage } from "../utils/storage.mjs";
 import displayMessage from "./displayMessage.mjs";
 
+const metaDescription = document.querySelector('meta[name="description"]');
+const pageTitle = document.title;
+
 export async function getListingDetails(listingId) {
   try {
     const response = await fetch(`${apiListings}/${listingId}`);
     const listing = await response.json();
+
+    metaDescription.content = listing.description;
+    document.title = `BidCrib | ${listing.title}`;
 
     return listing;
   } catch (error) {
