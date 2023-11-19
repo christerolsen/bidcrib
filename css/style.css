@@ -12097,6 +12097,10 @@ h6.card-title {
   color: #01385f;
 }
 
+h5.hero-heading, .hero-heading.h5 {
+  color: #fff;
+}
+
 .material-symbols-outlined {
   font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
 }

@@ -21,6 +21,7 @@ function handleFetchError(error) {
   profileContent.style.display = "none";
 }
 
+// Get the User info:
 export async function getUserProfile() {
   const userAvatar = document.querySelector("#userAvatar");
   const userName = document.querySelector("#userName");
@@ -53,6 +54,7 @@ export async function getUserProfile() {
   }
 }
 
+// Delete a user listing:
 export async function deleteUserListing(listingId) {
   try {
     const response = await fetch(
@@ -75,6 +77,7 @@ export async function deleteUserListing(listingId) {
   }
 }
 
+// Get the user listings
 export async function getUserListings() {
   try {
     const response = await fetch(`${apiProfiles}/${name}/listings`, options);

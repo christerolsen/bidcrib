@@ -1,5 +1,7 @@
 import { apiListings } from "./settings.mjs";
 import { formatDateTime } from "../utils/formatDateTime.mjs";
+import { getFromLocalStorage } from "../utils/storage.mjs";
+import displayMessage from "./displayMessage.mjs";
 
 export async function getListingDetails(listingId) {
   try {
@@ -38,50 +40,101 @@ if (listingId) {
       const formattedDeadline = formatDateTime(listing.endsAt);
       const formattedUpdateDate = formatDateTime(listing.updated);
 
+      const deadlineDate = new Date(formattedDeadline);
+      const currentDate = new Date();
+
       listingDetailsSection.innerHTML = `
-      <div class="container justify-content-center">
-        <div class="card "style="width: 20;">
+        <div class="container justify-content-center">
+          <div class="card "style="width: 20;">
             <img src="${imageUrl}" class="card-img-top" alt="...">
             <div class="card-body">
-                <h1 class="card-title">${listing.title}</h1>
-                <p class="card-text">${listing.description}</p>
-                <ul class="list-group list-group-flush"">
-                        <li class="list-group-item">
-                            <h5>Deadline:</h5>
-                            <p>${formattedDeadline}</p>
-                        </li>
-                        <li class="list-group-item">
-                            <h5>Updated:</h5>
-                            <p>${formattedUpdateDate}</p>
-                        </li>
-                        <li class="list-group-item">
-                            <h5>Number of bids: <span>${listing._count.bids}</span></h5>
-                        </li>
-                        
-                        <li class="list-group-item">
-                            <a href="/pages/listingDetails.html?id=${listing.id}" class="card-link">View more</a>
-                        </li>
-                    </ul>
-                <a href="#" class="btn btn-primary">Go somewhere</a>
+              <h1 class="card-title">${listing.title}</h1>
+              <p class="card-text">${listing.description}</p>
+              <ul class="list-group list-group-flush"">
+                <li class="list-group-item">
+                  <h5>Deadline:</h5>
+                  <p>${formattedDeadline}</p>
+                </li>
+                <li class="list-group-item">
+                  <h5>Updated:</h5>
+                  <p>${formattedUpdateDate}</p>
+                </li>
+                <li class="list-group-item">
+                  <h5>Number of bids: <span>${listing._count.bids}</span></h5>
+                </li>
+              </ul>
+              <div class="card-footer text-body-secondary">
+                <form id="bidForm">
+                  <div class="form-group d-flex gap-10">
+                    <input type="number" class="form-control" style="max-width: fit-content; margin-right: 10px;" id="bidAmount" placeholder="Make your bid" required>
+                    <button type="submit" class="btn btn-primary">Bid</button>
+                  </div>
+                </form>
+              </div>
             </div>
+          </div>
         </div>
-        </div>
-      
-      
-      
-      
-      
       `;
-      console.log("Listing details:", listing);
 
-      // Example: Populate HTML elements with listing details
-      // document.getElementById("title").innerText = listing.title;
+      if (!(deadlineDate > currentDate)) {
+        const passedDeadlineP = document.createElement("p");
+        passedDeadlineP.textContent = "Deadline is passed!";
+        passedDeadlineP.style.color = "red";
+        passedDeadlineP.style.padding = "20px";
+
+        const title = document.querySelector(".card-title");
+        title.appendChild(passedDeadlineP);
+
+        const cardFooter = document.querySelector(".card-footer");
+        cardFooter.style.display = "none";
+      }
+
+      const bidForm = document.querySelector("#bidForm");
+
+      bidForm.addEventListener("submit", async (event) => {
+        event.preventDefault();
+        const bidAmount = parseFloat(
+          document.querySelector("#bidAmount").value
+        );
+        const token = getFromLocalStorage("tokenKey");
+
+        try {
+          const bidResponse = await fetch(`${apiListings}/${listingId}/bids`, {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+              Authorization: `Bearer ${token}`,
+            },
+            body: JSON.stringify({
+              amount: bidAmount,
+            }),
+          });
+
+          if (bidResponse.ok) {
+            alert("Bid placed successfully!");
+            location.reload();
+          } else {
+            const errorData = await bidResponse.json();
+            const errorMessage =
+              errorData.errors && errorData.errors.length > 0
+                ? errorData.errors[0].message
+                : "Unknown error";
+
+            console.log(errorData);
+            console.log(`Error message: ${errorMessage}`);
+
+            alert(`Error placing bid: ${errorMessage}`);
+          }
+
+          const bidData = await bidResponse.json();
+          console.log("Bid placed successfully:", bidData);
+          // Du kan legge til logikk her for å oppdatere grensesnittet eller gi tilbakemelding til brukeren.
+        } catch (error) {
+          console.error("Error placing bid:", error);
+        }
+      });
     })
     .catch((error) => {
-      // Handle the error, e.g., log it or display a user-friendly message
       console.error("Error getting listing details:", error);
     });
-} else {
-  console.error("Listing ID not found in the URL.");
-  // Handle the case where the listing ID is missing.
 }

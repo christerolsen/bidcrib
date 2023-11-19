@@ -7,8 +7,6 @@ import { checkIfUserSignedIn } from "../auth/authorization.mjs";
 const loadMoreButton = document.querySelector("#loadMoreButton");
 const messageContainer = document.querySelector(".message-container");
 
-//loadMoreButton.style.display = "block";
-
 if (messageContainer) {
   messageContainer.style.display = "flex";
 }
@@ -30,9 +28,12 @@ export async function getListings() {
       const formattedDeadline = formatDateTime(listing.endsAt);
       const formattedUpdateDate = formatDateTime(listing.updated);
 
+      const deadlineDate = new Date(formattedDeadline);
+      const currentDate = new Date();
+
       checkIfUserSignedIn();
 
-      listingsContainer.innerHTML += `
+      const cardHTML = `
         <div class="col">
             <div class="card " style="width: 19rem;">
                 <img src="${imageUrl}" class="card-img-top" alt="Image of listing" />
@@ -62,6 +63,20 @@ export async function getListings() {
                 </div>
             </div>
         </div>`;
+
+      listingsContainer.innerHTML += cardHTML;
+
+      const currentCard = listingsContainer.lastElementChild; // Get the last added card
+      const title = currentCard.querySelector("h2.card-title");
+
+      if (!(deadlineDate > currentDate)) {
+        const passedDeadlineP = document.createElement("p");
+        passedDeadlineP.textContent = "Deadline is passed!";
+        passedDeadlineP.style.color = "red";
+        passedDeadlineP.style.padding = "20px";
+
+        title.appendChild(passedDeadlineP);
+      }
     });
 
     //console.log(results);
