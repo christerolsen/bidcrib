@@ -1,8 +1,7 @@
-# BidCrib - Semester Project 2 @Noroff
+# BidCrib - Semester Project 2
 
+![image](/img/various/homepage-screenshot-mobile.png)
 ![image](/img/various/homepage-screenshot.jpg)
-
-To take the skills the Noroff student has learned over the past three semesters and create an auction website.
 
 ## Description
 
@@ -25,37 +24,42 @@ Upon registration the user gets 1000 credits to use for bidding. The only way th
 - bid on listings, if they have enough credits
 - view how many bids a listing have gotten
 
+## UI Style Guide
+
+- [See the guide here](https://github.com/christerolsen/bidcrib/blob/main/various-attachements/bidcrib-ui_style_guide.pdf)
+- Remember to click "More Pages" to see all pages.
+
+## Prototype
+
+- [See the prototype here](https://xd.adobe.com/view/0b67b86d-b2fc-4e2b-a029-c7b5cfb73eb3-5e34/?fullscreen)
+
+## Demo
+
+- [Live demo on Netlify](https://silly-meringue-575725.netlify.app)
+
 ## Built With
 
-- **HTML**
-- **CSS/SASS**
-- **Javascript**
-- **[Bootstrap v5.3]()**
+- HTML
+- CSS/SASS
+- Javascript
+- Bootstrap v5.3
+
+Hero images, "no-image" image and profilepictures are generated using [Adobe Firefly](https://firefly.adobe.com/)
 
 ## Getting Started
 
 ### Installing
 
-1. Clone the repo:
+Clone the repo:
 
 ```bash
-git clone https://github.com/christerolsen/bidcrib.git
-```
-
-2. Install the dependencies:
-
-```bash
-npm install
+https://github.com/christerolsen/bidcrib.git
 ```
 
 ### Running
 
-To run the app, upload to webserver or use extensions like Live Server, or other alternatives.
+Upload to webserver
 
 ## Contact
 
-- **[My LinkedIn page](https://www.linkedin.com/in/christer-olsen-b557ab1b4/)**
-
-## Acknowledgments
-
-- This project is powered by **[Noroff API (v1)](https://docs.noroff.dev/)**
+[LinkedIn](https://www.linkedin.com/in/christer-olsen-b557ab1b4/)
